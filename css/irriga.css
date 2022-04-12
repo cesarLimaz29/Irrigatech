@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 body {
 	font-family: Century Gothic;
@@ -117,15 +119,72 @@ a {
 	font-size: 45px;
 }
 
-/* card integrantes */
+/* Quem somos  */
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-.cards{
+.container-quem {
+	display: flex;
 	margin-top: 20px;
-	height: 600px;
-}
+	height: 400px;
+	width: 100%;
+	background: rgb(57,66,38);
+	background: linear-gradient(90deg, rgba(57,66,38,1) 0%, rgba(126,161,54,1) 35%, rgb(109, 156, 16) 100%);
+	justify-content: space-between;
+	}
 
+.item-1 {
+	height: 80%;
+	width: 45%;		
+	margin-top: 40px;
+	margin-left: 6%;
+	
+	}
+
+	.item-1 h1 {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 25px;
+
+
+	}
+
+	.item-1 p {
+		font-family: 'Poppins', sans-serif;
+		color: white;
+		font-size: 20px;
+		line-height: 50px;
+
+
+
+
+	}
+
+.img-quem {
+	display: flex;
+	height: 80%;
+	width: 45%;		
+	background-color:
+	margin-top: 40px;
+	margin-right: 3%;
+	justify-content: center;
+	}
+
+
+.img-quem img {
+	margin-top: 20px;
+	width: 600px;
+	height: 400px;
+
+	
+
+
+
+
+
+
+
+}
 * {
 	box-sizing: border-box;
 }
