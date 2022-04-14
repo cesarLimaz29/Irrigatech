@@ -1,0 +1,6 @@
+/* USAR  LINK DA FONTE PRIMEIRO */
+.banner .container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}

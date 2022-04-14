@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calculator.css">
+    <title>Calculadora financeira Irrigatech</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar" id="nav">
+            <ul>
+                <li><a href="index.html">Inicio<br>
+                        <div class="barra"></div>
+                    </a></li>
+                <li><a href="index.html#projetos">Quem Somos<div class="barra"></div></a></li>
+                <li><a href="index.html#equipe">Projetos<div class="barra"></div></a></li>
+                <li><a href="calculator.html">Calculadora<br>
+                        <div class="barra"></div>
+                    </a></li>
+                <li><a href="index.html#contato">Contato<div class="barra"></div></a></li>
+                <li>|</li>
+                <li><a href="login.html">Faça Login</a><a href="cadastro.html"> ou Cadastre-se<div class="barra"></div>
+                        </a></li>
+                <img class="img-logo" src="images/logos/logo irrigatec azul.png"></img>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <div class="card">
+                <span class="texto">
+                <h3>Calculadora para consumo anual de água</h3>
+                    Insira o consumo de água no verão em m³:
+                    <input class="ipt_class" id="ipt_verao" type="text">
+                </span>
+
+                <span class="texto">
+                    Insira o consumo de água no outono em m³:
+                    <input class="ipt_class" id="ipt_outono" type="text">
+                </span>
+
+                <span class="texto">
+                    Insira o consumo de água no inverno em m³:
+                    <input class="ipt_class" id="ipt_inverno" type="text">
+                </span>
+
+                <span class="texto">
+                    Insira o consumo de água no primavera em m³:
+                    <input class="ipt_class" id="ipt_primavera" type="text">
+                </span>
+
+                <span class="texto">
+                    Insira o tamanho da sua plantação em ha:
+                    <input class="ipt_class" id="ipt_tamanho" type="text">
+                </span>
+                <button onclick="bt_calculo()">Calcular consumo anual de água por m² de plantação</button>
+            </div>
+            <span id="spanText"></span>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    function bt_calculo() {
+        var ax_verao = Number(ipt_verao.value);
+        var ax_outono = Number(ipt_outono.value);
+        var ax_inverno = Number(ipt_inverno.value);
+        var ax_primavera = Number(ipt_primavera.value);
+        var ax_tamanho = Number(ipt_tamanho.value);
+
+        var ax_consumo = (ax_verao + ax_outono + ax_inverno + ax_primavera) / ax_tamanho;
+        var ax_consumo_reduzido = 0.80 * ax_consumo;
+        var ax_economia = 3 * (ax_consumo - ax_consumo_reduzido);
+
+        spanText.innerHTML = `O consumo anual de água por hectares de plantação é de ${ax_consumo.toFixed(2)} m³ / ha.
+        Com a utilização da nossa tecnologia, o consumo será reduzido para ${ax_consumo_reduzido.toFixed(2)} m³ / ha,
+        o que resultará em uma economia de R$ ${ax_economia.toFixed(2)} / ha.`;
+
+        ipt_verao.value = ``;
+        ipt_outono.value = ``;
+        ipt_inverno.value = ``;
+        ipt_primavera.value = ``;
+        ipt_tamanho.value = ``;
+    }
+
+</script>
