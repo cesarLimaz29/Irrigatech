@@ -6,7 +6,10 @@ body {
 	font-family: Century Gothic;
 	box-sizing: border-box;
 	margin: 0px;
+	background: rgb(57, 66, 38);
+	background: linear-gradient(180deg, rgba(57, 66, 38, 1) 0%, rgba(126, 161, 54, 1) 62%, rgba(158, 227, 16, 1) 100%);
 }
+
 /* home e navbar */
 
 header {
@@ -14,6 +17,7 @@ header {
 	background-image: url(banner_irrigatec.png);
 	background-size: cover;
 }
+
 .inicio {
 	display: flex;
 	align-items: center;
@@ -28,6 +32,7 @@ header {
 	font-weight: bold;
 	margin-left: 8%;
 }
+
 .btn-Qro-Conhecer {
 	font-family: "Century Gothic", sans-serif;
 	width: 20%;
@@ -53,38 +58,39 @@ header {
 .navbar {
 	margin: 0px;
 	height: 16%;
-    width: 100%;
-    padding: 1%;
+	width: 100%;
+	padding: 1%;
 	padding-right: 70px;
-    position: fixed;
-    top: 0%;
-    text-align: right;
-    transition: 0.5s;
+	position: fixed;
+	top: 0%;
+	text-align: right;
+	transition: 0.5s;
 }
 
 .navbar ul li {
 	margin-right: 5px;
-    display: inline-block;
-    padding: 1% 18px;
-    font-size: 20px;
-    font-family:'Work Sans', sans-serif;
+	display: inline-block;
+	padding: 1% 18px;
+	font-size: 20px;
+	font-family: 'Work Sans', sans-serif;
 }
 
-.navbar ul img{
-    margin-top: -80px;
+.navbar ul img {
+	margin-top: -80px;
 }
-.img-logo{
-    font-family: "Century Gothic", sans-serif;
-    width:  16%;
-    text-align: center;
-    display: block;
-    margin-top: 25px;
-    outline: none;
-    padding: 10px 20px;
-    margin-top: -4%;
-    border-radius: 10px;
-    transition: 0.8s ease;
-    margin-left: 0%;
+
+.img-logo {
+	font-family: "Century Gothic", sans-serif;
+	width: 16%;
+	text-align: center;
+	display: block;
+	margin-top: 25px;
+	outline: none;
+	padding: 10px 20px;
+	margin-top: -4%;
+	border-radius: 10px;
+	transition: 0.8s ease;
+	margin-left: 0%;
 }
 
 
@@ -108,7 +114,8 @@ a:hover .barra {
 a {
 	list-style-type: none;
 	text-decoration: none;
-	color: white;
+	font-weight: 100;
+	color: rgb(255, 255, 255);
 	cursor: pointer;
 	transition: color 0.1s;
 }
@@ -123,80 +130,92 @@ a {
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+#quemsomos {
+	height: 70px;
+	margin-top: 20px;
+}
+
 .container-quem {
 	display: flex;
-	margin-top: 20px;
 	height: 400px;
 	width: 100%;
-	background: rgb(57,66,38);
-	background: linear-gradient(90deg, rgba(57,66,38,1) 0%, rgba(126,161,54,1) 35%, rgb(109, 156, 16) 100%);
 	justify-content: space-between;
-	}
+}
 
 .item-1 {
 	height: 80%;
-	width: 45%;		
+	width: 45%;
 	margin-top: 40px;
 	margin-left: 6%;
-	
-	}
 
-	.item-1 h1 {
+}
+
+.item-1 h1 {
 	color: white;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 25px;
 
+}
 
-	}
+.item-1 p {
+	font-family: 'Poppins', sans-serif;
+	color: white;
+	font-size: 20px;
+	line-height: 50px;
 
-	.item-1 p {
-		font-family: 'Poppins', sans-serif;
-		color: white;
-		font-size: 20px;
-		line-height: 50px;
-
-
-
-
-	}
+}
 
 .img-quem {
 	display: flex;
 	height: 80%;
-	width: 45%;		
-	background-color:
+	width: 45%;
 	margin-top: 40px;
 	margin-right: 3%;
 	justify-content: center;
-	}
+}
 
 
 .img-quem img {
-	margin-top: 20px;
+	margin-top: -30px;
 	width: 600px;
 	height: 400px;
+}
+.container-calcu {
+	display: flex;
+	height: 400px;
+	width: 100%;
+	justify-content: space-between;
+}
 
-	
+.item-12 {
+	height: 80%;
+	width: 45%;
+	margin-top: 40px;
+	margin-left: 6%;
 
+}
 
+.item-12 h1 {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 25px;
 
+}
 
+.item-12 p {
+	font-family: 'Poppins', sans-serif;
+	color: white;
+	font-size: 20px;
+	line-height: 50px;
 
+}
 
-
+.img-quem-calcu img {
+	margin-top: -30px;
+	width: 500px;
 }
 * {
 	box-sizing: border-box;
-}
-
-body {
-	font-family: Montserrat, sans-serif;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	min-height: 100vh;
-	margin: 0;
 }
 
 h3 {
@@ -216,7 +235,7 @@ p {
 .card-container {
 	background-color: #231E39;
 	border-radius: 5px;
-	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
 	color: #B3B8CD;
 	padding-top: 30px;
 	width: 350px;
@@ -256,5 +275,297 @@ button.primary.ghost {
 	color: #02899C;
 }
 
+.cards-quem {
+	margin-top: -40px;
+	height: 480px;
+
+}
+
+.container-quem2 {
+	margin-top: 5%;
+	text-align: center;
+	font-size: 45px;
+}
+
+.container-quem2 h4 {
+	color: #FFFFFF;
+}
+
+.line {
+	margin: 1% auto;
+	background-color: #231E39;
+	width: 0%;
+	height: 3px;
+	-webkit-transition: width 1.5s;
+	transition: width 1;
+}
+
+.container-quem2:hover .line {
+	margin: 1% auto;
+	background-color: #231E39;
+	width: 100%;
+	height: 3px;
+	-webkit-transition: width 0.5s;
+	transition: width 0.5s;
+}
+
+.cards-sobre {
+	margin-top: -60px;
+	margin-left: 16%;
+	width: auto;
+	height: 45%;
+}
+
+.cards-sobre .card-item {
+	width: 22%;
+	margin: 2.5%;
+	float: left;
+}
+
+.card-item {
+	height: auto;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 1px 8px 0 #4e4e4e33, 0 1px 5px 0 #00000030;
+	height: 350px;
+}
+
+.card-item img {
+	margin-left: 4%;
+	margin-top: 8%;
+	border-radius: 2px;
+	width: 50%;
+}
 
 
+
+.infos {
+	padding: 5%;
+	padding-left: 30px;
+	text-align:left;
+	color: black;
+	width: 90%;
+	height: 30%;
+}
+
+.infos h2 {
+	color: #3497f3;
+	text-transform: uppercase;
+	font-family: Montserrat;
+	font-weight: bold;
+	font-size: 35%;
+	text-align: center;
+}
+
+.infos p {
+	margin-top: 8%;
+	font-family: Century Gothic;
+	font-size: 30%;
+}
+
+.botao-calcu{
+	background-color: #394226;
+	border-radius: 6px;
+	border-width: 0;
+	box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	font-size: 100%;
+	height: 44px;
+	line-height: 1.15;
+	margin: 12px 0 0;
+	padding: 0 25px;
+	text-align: center;
+	width: 80%;
+  }
+  
+  .button-9:disabled {
+	cursor: default;
+  }
+
+
+#contato {
+	height: 70px;
+	margin-top: 20px;
+}
+
+#objetivos {
+	height: 40px;
+	margin-top: 20px;
+}
+
+#calculadora {
+	height: 90px;
+	margin-top: 20px;
+}
+/* footer */
+
+.container-footer {
+	background: #394226;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px;
+	padding: 55px 50px;
+}
+
+.container-footer .footer-esquerda,
+.container-footer .footer-centro,
+.container-footer .footer-direita {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.container-footer .footer-esquerda {
+	width: 40%;
+}
+
+/* The company logo */
+
+.container-footer h3 {
+	color: #ffffff;
+	font: normal 36px;
+	margin: 0;
+}
+
+.container-footer h3 span {
+	color: #ffffff;
+}
+
+/* Footer links */
+
+.container-footer .footer-links {
+	color: #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.container-footer .footer-links a {
+	display: inline-block;
+	line-height: 1.8;
+	font-weight: 400;
+	text-decoration: none;
+	color: inherit;
+}
+
+.container-footer .footer-nome-empresa {
+	color: rgb(250, 249, 249);
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.container-footer .footer-centro {
+	width: 35%;
+}
+
+.container-footer .footer-centro i {
+	background-color: #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.container-footer .footer-centro i.fa-envelope {
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.container-footer .footer-centro p {
+	display: inline-block;
+	color: #ffffff;
+	font-weight: 400;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.container-footer .footer-centro p span {
+	display: block;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 2;
+}
+
+.container-footer .footer-centro .info {
+	display: block;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	margin-left: 27px;
+}
+
+.container-footer .footer-centro p a {
+	color: lightseagreen;
+	text-decoration: none;
+	;
+}
+
+.container-footer .footer-links a:before {
+	content: "|";
+	font-weight: 300;
+	font-size: 20px;
+	left: 0;
+	color: #fff;
+	display: inline-block;
+	padding-right: 5px;
+}
+
+.container-footer .footer-links .link-1:before {
+	content: none;
+}
+
+/* Footer Right */
+
+.container-footer .footer-direita {
+	width: 20%;
+}
+
+.container-footer .footer-sobre-empresa {
+	line-height: 20px;
+	color: #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.container-footer .footer-sobre-empresa span {
+	display: block;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 880px) {
+
+	.container-footer {
+		font: bold 14px sans-serif;
+	}
+
+	.container-footer .footer-esquerda,
+	.container-footer .footer-centro,
+	.container-footer .footer-direita {
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.container-footer .footer-centro i {
+		margin-left: 0;
+	}
+
+}

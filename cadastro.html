@@ -1,62 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="PT">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <title>IRRIGA CADASTRO</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+    <title>Irrigatech - Cadastre-se</title>
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <h1>Acquatec</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">Nossos Serviços</a></li>
-                <li><a href="">Sobre Nós</a></li>
-                <li>|</li>
-                <li><a href="#">Login</a></li>
-                <li class="agora"><a href="cadastro.html">Cadastre-se</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="banner">
-        <div class="container">
-            <div class="card">
-                <p class="title">IRRIGATECH</p>
-                <p class="subtitle">Cadastrar-se</p>
+    <header>
+        <main id="Inicio" class="inicio">
+  
+            <div class="navbar" id="nav">
 
-                <p class="texto">Nome da Empresa:</p>
-                <input type="text" placeholder="Irrigatech S/A">
+                <ul>
+                    <li><a id="uli" href="index.html#">Inicio<br>
+                            <div class="barra"></div>
+                        </a></li>
+                    <li><a id="uli2" href="index.html#quemsomos">Quem Somos<br>
+                            <div class="barra"></div>
+                        </a></li>
+                    <li><a id="uli3" href="index.html#projeto">Projetos<br>
+                            <div class="barra"></div>
+                        </a></li>
+                    <li><a id="uli4" href="index.html#calculadora">Calculadora<br>
+                            <div class="barra"></div>
+                        </a></li>
+                    <li><a id="uli5" href="index.html#contato">Contato<br>
+                            <div class="barra"></div>
+                        </a></li>
+                    <li><a id="uli6"> | </a></li>
+                    <li><a id="uli7" href="login.html">Login<br>
+                            <div class="barra"></div>
+                        </a></li>
+                    <li><a id="uli8" href="cadastro.html">Cadastre - se<br>
+                            <div class="barra"></div>
+                        </a></li>
+                    <a href="#"><img class="img-logo" src="images/logos/logo irrigatec azul.png"></img></a>
+                </ul>
+                
 
-                <p class="texto">CNPJ:</p>
-                <input type="password" placeholder="12.345.678/0001-90">
-                <p class="texto">Endereço:</p>
-                <input type="text" placeholder="Rua Haddock Lobo, 595">
-
-                <p class="texto">E-mail:</p>
-                <input type="text" placeholder="sua.empresa@domínio.com">
-
-                <p class="texto">Ramo Agropecuário:</p>
-                <input type="text" placeholder="Pimenta Biquinho">
-
-                <p class="texto">Nome Proprietario:</p>
-                <input type="text" placeholder="Seu Nome da Silva Alves">
-
-                <p class="texto">CPF:</p>
-                <input type="text" placeholder="123.456.789-00">
-
-                <p class="texto">Telefone:</p>
-                <input type="text" placeholder="(XX)91234-5678">
-
-                <p class="texto">Senha:</p>
-                <input type="password" placeholder="Insira sua Senha">
             </div>
-            <button class="btn">Prosseguir</button>
-        </div>
+            </header>
+                        
+            <div class="banner">
+                <div class="container">
+                    <div class="card">
+                        <span class="texto">
+                        <h3>Cadastre-se ao IrrigaTech</h3>
+                           Nome:
+                            <input class="ipt_class" id="name" type="text">
+                        </span>
+        
+                        <span class="texto">
+                            E-Mail:
+                            <input class="ipt_class" id="email" type="text">
+                        </span>
+        
+                        <span class="texto">
+                            CPF:
+                            <input class="ipt_class" id="doc" type="text">
+                        </span>
+        
+                        <span class="texto">
+                            Telefone:
+                            <input class="ipt_class" id="tel" type="text">
+                        </span>
+        
+                        <span class="texto">
+                           Senha:
+                            <input class="ipt_class" id="senha" type="password">
+                        </span>
+                        <button onclick="bt_calculo()">Prosseguir</button>
+                    </div>
+                  
+                </div>
 </body>
 
 </html>

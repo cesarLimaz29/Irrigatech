@@ -24,6 +24,7 @@ body {
     margin-top: 4%;
     border-radius: 8px;
     justify-content: center;
+
 }
 
 .cont1 {
@@ -104,13 +105,14 @@ body {
     top: 0%;
     text-align: center;
     transition: 0.5s;
+    
 }
 
 .navbar ul li {
     display: inline-block;
-    padding: 1% 2%;
+    padding: 1% 20px;
     font-size: 20px;
-    font-family: Century Gothic;
+    margin-right: -10px; 
 }
 
 .navbar ul img{
@@ -127,7 +129,7 @@ body {
     margin-top: -4%;
     border-radius: 10px;
     transition: 0.8s ease;
-    margin-left: 4%;
+    margin-left: 0%;
 }
 .barra {
     background-color: #394226;
@@ -152,4 +154,5 @@ a {
     cursor: pointer;
     transition: color 0.1s;
 }
+
 
