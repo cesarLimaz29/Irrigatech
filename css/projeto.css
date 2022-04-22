@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+body{
+
+    font-family:'Work Sans' ;
+
+
+}
+
+.div_container{
+    
+    display: flex;
+    height: 400px;
+    width: 100%;
+    justify-content: space-between;
+   
+}
+
+.div_txt{
+
+    width: 50%;
+
+}
+
+.img_container {
+
+    display: flex;
+    height: 80%;
+    width: 45%;
+    margin-top: 40px;
+    margin-right: 3%;
+    justify-content: center;
+}
+
+
+.img_container img {
+
+    margin-top: -30px;
+    width: 600px;
+    height: 400px;
+}
+
+.div_txt {
+    height: 80%;
+    width: 45%;
+    margin-top: 40px;
+    margin-left: 6%;
+
+}
+
+.div_txt h1 {
+
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+
+}
+
+.div_txt p {
+    
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 50px;
+
+}
+
+
+
+/* Cards1*/
+
+
+.div_card {
+
+    align-items:center ;
+    justify-content: space-between;
+    display: flex;
+    width: 70%;
+    margin-left: 200px;
+    margin-top: 100px;
+    
+}
+
+.card {
+
+    align-items:center ;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    justify-content: center;
+  
+}
+
+
+.card_header {
+    
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 15px;
+}
+
+.card__body {
+    
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.card_body H4 {
+ 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: rgb(34, 161, 30);
+    font-size: 20px;
+
+}
+
+.card_body p{
+
+    text-align: justify;
+    display: flex;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+ }
+
+
+
+ /* Cards-2*/
+
+ .card2 {
+
+    align-items:center ;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    justify-content: center;
+  
+}
+
+
+.card_header2 {
+    
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 15px;
+}
+
+.card__body2 {
+    
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.card_body2 H4 {
+ 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: rgb(34, 161, 30);
+    font-size: 20px;
+
+}
+
+.card_body2 p{
+
+    text-align: justify;
+    display: flex;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+
+/* Cards-3*/
+
+
+
+.card3 {
+
+    align-items:center ;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    justify-content: center;
+  
+}
+
+
+.card_header3 {
+    
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 15px;
+}
+
+.card__body3 {
+    
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.card_body3 H4 {
+ 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: rgb(34, 161, 30);
+    font-size: 20px;
+
+}
+
+.card_body3 p{
+
+    text-align: justify;
+    display: flex;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+}
