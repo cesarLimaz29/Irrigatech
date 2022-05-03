@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="irriga.css">
+    <script src="./js/funcoes.js"></script>
+    <title>Irrigatech - Login</title>
+</head>
+
+<body>
+    <header>
+        <main id="Inicio" class="inicio">
+            <div class="navbar" id="nav">
+                <ul>
+
+                    <li>
+                        <a id="uli" href="index.html#">Inicio<br>
+                            <div class="barra"></div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="uli2" href="index.html#quemsomos">Quem Somos<br>
+                            <div class="barra"></div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="uli3" href="index.html#projetos">Projetos<br>
+                            <div class="barra"></div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="uli4" href="index.html#calculadora">Calculadora<br>
+                            <div class="barra"></div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="uli5" href="index.html#contato">Contato<br>
+                            <div class="barra"></div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="uli6"> |
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="uli7" href="login.html">Login<br>
+                            <div class="barra"></div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a id="uli8" href="cadastro.html">Cadastre - se<br>
+                            <div class="barra"></div>
+                        </a>
+                    </li>
+
+                    <a href="#"><img class="img-logo" src="images/logos/logo irrigatec azul.png"></img></a>
+                </ul>
+            </div>
+    </header>
+
+    <div class="back">
+        <div class="container">
+            <div class="cont1">
+                <p class="texts">Login
+                </p>
+                <img class="round" src="images/user.png" alt="user" />
+
+                <p class="text">Usuario:
+                </p>
+                <input class="input" type="text">
+
+                <p class="text">Senha:
+                </p>
+                <input class="input" type="password">
+
+                <button class="entrar">Entrar </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
