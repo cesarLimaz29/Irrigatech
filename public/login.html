@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="irriga.css">
     <script src="./js/funcoes.js"></script>
     <title>Irrigatech - Login</title>
 </head>
@@ -74,17 +73,21 @@
             <div class="cont1">
                 <p class="texts">Login
                 </p>
-                <img class="round" src="images/user.png" alt="user" />
+                <img class="round" src="images/user.png" alt="user">
 
                 <p class="text">Usuario:
                 </p>
-                <input class="input" type="text">
+                <input class="input" id="email_input" type="text">
 
                 <p class="text">Senha:
                 </p>
-                <input class="input" type="password">
+                <input class="input" id="senha_input" type="password">
 
-                <button class="entrar">Entrar </button>
+                <button class="entrar" onclick="entrar()">Entrar</button>
+                
+                <div id="cardErro" style="display:none">
+                    <div id="mensagem_erro"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -92,8 +95,6 @@
 
 </html>
 <script>
-
-
     function entrar() {
         aguardar();
 
