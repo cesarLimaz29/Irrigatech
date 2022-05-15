@@ -11,87 +11,76 @@
 </head>
 
 <body>
-    <header>
-        <main id="Inicio" class="inicio">
-            <div class="navbar" id="nav">
-                <ul>
+    <body>
 
-                    <li>
-                        <a id="uli" href="index.html#">Inicio<br>
-                            <div class="barra"></div>
-                        </a>
-                    </li>
+        <header>
+            <main id="Inicio" class="inicio">
+                <div class="navbar" id="nav">
+    
+                    <ul>
+                        <li><a id="uli" href="index.html">Inicio<br>
+                                <div class="barra"></div>
+                            </a></li>
+                        <li><a id="uli2" href="index.html#quemsomos">Quem Somos<br>
+                                <div class="barra"></div>
+                            </a></li>
+                        <li><a id="uli3" href="index.html#projetos">Projetos<br>
+                                <div class="barra"></div>
+                            </a></li>
+                        <li><a id="uli4" href="index.html#calculadora">Calculadora<br>
+                                <div class="barra"></div>
+                            </a></li>
+                        <li><a id="uli5" href="index.html#contato">Contato<br>
+                                <div class="barra"></div>
+                            </a></li>
+    
+                        <li><a id="uli6"> | </a></li>
+                        <li><a id="uli7" href="login.html">Login<br>
+                                <div class="barra"></div>
+                            </a></li>
+                        <li><a id="uli8" href="cadastro.html">Cadastre - se<br>
+                                <div class="barra"></div>
+                            </a></li>
+                        <a href="#"><img class="img-logo" src="images/logos/logo irrigatec azul.png"></img></a>
+                    </ul>
+    
+                </div>
+    
+        </header>
+    
+        <div class="cadastro">
+            <div class="container-cadastro">
+                <div class="cadastro-pic js-tilt" data-tilt>
+                    <img src="images/login.png" alt="IMG">
+                </div>
+    
+                <div class="cadastro-form ">
+                    <span class="cadastro-form-title">
+                        Faça seu login 
+                    </span>
+    
+                    <div class="div-input1 " >
+                        <input class="input1" type="text" name="email" placeholder="Email" id="email_input">
+                        <span class="sombra-input1"></span>
+                    </div>
+    
+                    <div class="div-input1 ">
+                        <input class="input1"  type="password" name="senha" placeholder="Senha"  id="senha_input">
+                        <span class="sombra-input1"></span>
+                    </div>
 
-                    <li>
-                        <a id="uli2" href="index.html#quemsomos">Quem Somos<br>
-                            <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli3" href="index.html#projetos">Projetos<br>
-                            <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli4" href="index.html#calculadora">Calculadora<br>
-                            <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli5" href="index.html#contato">Contato<br>
-                            <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli6"> |
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli7" href="login.html">Login<br>
-                            <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli8" href="cadastro.html">Cadastre - se<br>
-                            <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <a href="#"><img class="img-logo" src="images/logos/logo irrigatec azul.png"></img></a>
-                </ul>
-            </div>
-    </header>
-
-    <div class="back">
-        <div class="container">
-            <div class="cont1">
-                <p class="texts">Login
-                </p>
-                <img class="round" src="images/user.png" alt="user">
-
-                <p class="text">Usuario:
-                </p>
-                <input class="input" id="email_input" type="text" autofocus>
-
-                <p class="text">Senha:
-                </p>
-                <input class="input" id="senha_input" type="password">
-
-                <button class="entrar" onclick="entrar()">Entrar</button>
-                
-                <div id="cardErro" style="display:none">
-                    <div id="div_aguardar"></div>
-                    <div id="mensagem_erro"></div>
+                    <div class="container-cadastro-form-btn">
+                        <button class="cadastro-form-btn" onclick="entrar()">Entrar</button>
+      
+                        <div id="cardErro" style="display:none">
+                            <div id="div_aguardar"></div>
+                            <br><br><br>
+                            <div id="mensagem_erro" style="color: red; font-family: 'MontSerrat-Bold', sans-serif;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

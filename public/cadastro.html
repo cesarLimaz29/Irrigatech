@@ -11,103 +11,93 @@
 </head>
 
 <body>
+
     <header>
         <main id="Inicio" class="inicio">
             <div class="navbar" id="nav">
+
                 <ul>
-
-                    <li>
-                        <a id="uli" href="index.html#">Inicio<br>
+                    <li><a id="uli" href="index.html">Inicio<br>
                             <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli2" href="index.html#quemsomos">Quem Somos<br>
+                        </a></li>
+                    <li><a id="uli2" href="index.html#quemsomos">Quem Somos<br>
                             <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli3" href="index.html#projetos">Projetos<br>
+                        </a></li>
+                    <li><a id="uli3" href="index.html#projetos">Projetos<br>
                             <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli4" href="index.html#calculadora">Calculadora<br>
+                        </a></li>
+                    <li><a id="uli4" href="index.html#calculadora">Calculadora<br>
                             <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli5" href="index.html#contato">Contato<br>
+                        </a></li>
+                    <li><a id="uli5" href="index.html#contato">Contato<br>
                             <div class="barra"></div>
-                        </a>
-                    </li>
+                        </a></li>
 
-                    <li>
-                        <a id="uli6"> |
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli7" href="login.html">Login<br>
+                    <li><a id="uli6"> | </a></li>
+                    <li><a id="uli7" href="login.html">Login<br>
                             <div class="barra"></div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a id="uli8" href="cadastro.html">Cadastre - se<br>
+                        </a></li>
+                    <li><a id="uli8" href="cadastro.html">Cadastre - se<br>
                             <div class="barra"></div>
-                        </a>
-                    </li>
-
+                        </a></li>
                     <a href="#"><img class="img-logo" src="images/logos/logo irrigatec azul.png"></img></a>
                 </ul>
+
             </div>
+
     </header>
 
-    <div class="banner">
-        <div class="container">
-            <div class="card">
-                <span class="texto">
-                    <h3>Cadastre-se ao IrrigaTech</h3>
-                    Nome:
-                    <input class="ipt_class" id="nome_input" type="text" autofocus>
-                </span>
-
-                <span class="texto">
-                    E-Mail:
-                    <input class="ipt_class" id="email_input" type="text">
-                </span>
-
-                <span class="texto">
-                    CPF:
-                    <input class="ipt_class" id="cpf_input" type="text">
-                </span>
-
-                <span class="texto">
-                    Telefone:
-                    <input class="ipt_class" id="tel_input" type="text">
-                </span>
-
-                <span class="texto">
-                    Senha:
-                    <input class="ipt_class" id="senha_input" type="password">
-                </span>
-
-                <span class="texto">
-                    Confirme a senha:
-                    <input class="ipt_class" id="confirmacao_senha_input" type="password">
-                </span>
-                <button onclick="cadastrar()">Prosseguir</button>
-                <div id="mensagem_erro" style="display: none;"></div>
-                <div id="cardErro" style="display: none;"></div>
+    <div class="cadastro">
+        <div class="container-cadastro">
+            <div class="cadastro-pic js-tilt" data-tilt>
+                <img src="images/cadastro.png" alt="IMG">
             </div>
 
+            <div class="cadastro-form ">
+                <span class="cadastro-form-title">
+                    Cadastre-se ao IrrigaTech
+                </span>
+
+                <div class="div-input1 ">
+                    <input class="input1" type="text" name="nome" placeholder="Nome"  id="nome_input">
+                    <span class="sombra-input1"></span>
+                </div>
+
+                <div class="div-input1 " data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input1" type="text" name="email" placeholder="Email" id="email_input">
+                    <span class="sombra-input1"></span>
+                </div>
+
+                <div class="div-input1 ">
+                    <input class="input1"  name="cpf" placeholder="CPF"  id="cpf_input">
+                    <span class="sombra-input1"></span>
+                </div>
+                <div class="div-input1 ">
+                    <input class="input1"  name="telefone" placeholder="Telefone"  id="tel_input">
+                   <span class="sombra-input1"></span>
+                </div>
+                <div class="div-input1 ">
+                    <input class="input1"  type="password" name="senha" placeholder="Senha"  id="senha_input">
+                    <span class="sombra-input1"></span>
+                </div>
+                
+                <div class="div-input1 ">
+                    <input class="input1"  type="password" name="confirmar-senhar" placeholder="Confirmar senha"  id="confirmacao_senha_input">
+                    <span class="sombra-input1"></span>
+                </div>
+
+                <div class="container-cadastro-form-btn">
+                    <button class="cadastro-form-btn" onclick="cadastrar()">Prosseguir</button>
+                </div>
+            </div>
         </div>
-        <div id="div_aguardar" style="display: none;"></div>
+    </div>
+    <div id="mensagem_erro" style="display: none;"></div>
+    <div id="cardErro" style="display: none;"></div>
+    </div>
+
+    </div>
+    <div id="div_aguardar" style="display: none;"></div>
 </body>
 
 </html>

@@ -10,6 +10,7 @@ body {
 	font-family: Century Gothic;
 	box-sizing: border-box;
 	margin: 0px;
+	
 	background: rgb(57, 66, 38);
 	background: linear-gradient(180deg, rgba(57, 66, 38, 1) 0%, rgba(126, 161, 54, 1) 62%, rgba(158, 227, 16, 1) 100%);
 }
