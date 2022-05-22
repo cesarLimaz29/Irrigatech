@@ -170,7 +170,7 @@ a {
   
   .container-cadastro {
     width: 90%;
-    height: 510px;
+    height: 480px;
     background-color: #FFFFFF;
     border-radius: 10px;
     display: -webkit-box;
@@ -191,10 +191,12 @@ a {
   }
   
   .cadastro-pic img {
+    position: absolute;
     max-width: 100%;
   }
   
   .cadastro-form {
+    margin-left: 60%;
     width: 390px;
   }
   

@@ -186,151 +186,260 @@ header .imagem-text .profession{
     position: absolute;
 }
 
-.div-fundo {
-    border-radius: 10px;
-    width: 35%;
-    height: 80%;
-    margin-top: 25px;
-    margin-left: 20%;
-    background-color: #FFFFFF;
+
+
+
+.alert-esquerda {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 47.8%;
+    height: 90%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    float: left;
+}
+
+.alert-direita {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 8px;
+    width: 48.5%;
+    height: 90%;
+    background-color: #ffffff;
+}
+
+.alert-esquerda p {
+    margin-left: 15px;
+    margin-top: -15px;
+    padding: 10px;
+    float: left;
+}
+
+.alert-direita p {
+    margin-left: 15px;
+    margin-top: -15px;
+    padding: 10px;
+    float: left;
+}
+
+
+.div-alertas {
+    background-color: rgb(255, 255, 255);
+    width: 70%;
+    height: 28%;
+    position: absolute;
+    margin-left: 19%;
+    margin-top: 2%;
     display: flex;
+    border-radius: 6px;
+
+}
+
+
+
+
+.alert-esquerda2 {
+    margin-top: 10px;
+    margin-left: 10px;
+    width:  47.8%;
+    height: 90%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    float: left;
+}
+
+.alert-direita2{
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 8px;
+    width: 48.5%;
+    height: 90%;
+    background-color: #ffffff;
+}
+
+.alert-esquerda2 p {
+    margin-left: 15px;
+    margin-top: -15px;
+    padding: 10px;
+    float: left;
+}
+
+.alert-direita2 p {
+    margin-left: 15px;
+    margin-top: -15px;
+    padding: 15px;
+    float: left;
+}
+
+
+.div-alertas2 {
+    background-color: rgb(255, 255, 255);
+    width: 70%;
+    height: 28%;
     position: absolute;
-    justify-content: center;
-}
-
-.Grafico1 {
-    margin-top: 33px;
-    font-family: 'Work Sans', sans-serif;
-    color: grey;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.Grafico1 p {
-    margin-left: 70px;
-}
-
-#meugrafico1 {
-    position: absolute;
-    height: 80px;
-    width: 80px;
-}
-
-.div-grafico2 .div-fundo2 p {
-    font-size: px;
-    margin-top: 15px;
-    font-family: 'Work Sans';
-    position: absolute;
-}
-
-.div-fundo2 {
-    border-radius: 10px;
-    width: 35%;
-    height: 80%;
-    margin-top: 25px;
-    margin-left: 60%;
-    background-color: #FFFFFF;
+    margin-left: 19%;
+    margin-top: 17%;
     display: flex;
-    position: absolute;
-    justify-content: center;
-}
+    border-radius: 6px;
 
-.Grafico2 {
-    margin-top: 33px;
-    font-family: 'Work Sans', sans-serif;
-    color: grey;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.Grafico2 p {
-    margin-left: 70px;
 }
 
 
-#meugrafico2 {
-    position: absolute;
-    height: 80px;
-    width: 80px;
-}
-.div-grafico4 .div-fundo4 p {
-    font-size: px;
-    margin-top: 15px;
-    font-family: 'Work Sans';
-    position: absolute;
-}
 
-.div-fundo4 {
-    border-radius: 10px;
-    width: 35%;
-    height: 40%;
-    margin-top:25%;
-    margin-left: 60%;
-    background-color: #FFFFFF;
+.alert-esquerda3 {
+    margin-top: 10px;
+    margin-left: 10px;
+    width:  96.3%;
+    height: 90%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    float: left;
     display: flex;
+}
+
+
+
+.alert-esquerda3 p {
+    margin-left: 15px;
+    margin-top: -15px;
+    padding: 10px;
+    float: left;
+}
+
+
+.div-alertas3 {
+    background-color: rgb(57, 66, 38);
+    width: 45%;
+    height: 25%;
     position: absolute;
-    justify-content: center;
-}
-
-.Grafico4 {
-    margin-top: 33px;
-    font-family: 'Work Sans', sans-serif;
-    color: grey;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.Grafico4 p {
-    margin-left: 70px;
-}
-
-#meugrafico4 {
-    position: absolute;
-    height: 80px;
-    width: 80px;
-}
-
-.div-grafico3 .div-fundo3 p {
-    font-size: px;
-    margin-top: 15px;
-    font-family: 'Work Sans';
-    position: absolute;
-}
-
-.div-fundo3 {
-    border-radius: 10px;
-    width: 35%;
-    height: 40%;
-    margin-left: 20%;
-    margin-top:25%;
-    background-color: #FFFFFF;
+    margin-left: 30%;
+    margin-top: 32%;
     display: flex;
-    position: absolute;
-    justify-content: center;
+    border-radius: 6px;
+    
+
 }
 
-.Grafico3 {
-    margin-top: 33px;
-    font-family: 'Work Sans', sans-serif;
-    color: grey;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+
+.alert-amarelo {
+
+    margin-left: -150px;
+    
+    width: 31%;
+    margin-left: 15px;
+
 }
 
-.Grafico3 p {
-    margin-left: 70px;
+
+.alert-amarelo p{
+    margin-top: 1px;
+    margin-left: -8px;
+
+
 }
 
-#meugrafico3 {
-    position: absolute;
-    height: 80px;
-    width: 80px;
+.alert-amarelo img {
+    
+   margin-top: 5px;
+   margin-left: 10px;
+    width: 40%;
+
 }
+
+.alert-verme {
+
+    margin-left: -150px;
+   
+    width: 31%;
+    margin-left: 15px;
+
+}
+
+
+.alert-verme p{
+    margin-top: 1px;
+    margin-left: 15px;
+
+
+}
+
+.alert-verme img {
+    width: 40%;
+    margin-top: 4px;
+    margin-left: 19px;
+  
+
+}
+
+
+.alert-verd {
+
+    margin-left: -150px;
+   
+    width: 31%;
+    margin-left: 15px;
+
+}
+
+
+.alert-verd p{
+    margin-top: 1px;
+    margin-left: 29px;
+
+
+}
+
+.alert-verd img {
+    
+    margin-top: 4px;
+    margin-left: 25px;
+    width: 40%; 
+
+}
+
+
+
+
+
+.temperatura{
+    color:#FFFFFF;
+    margin-left: 7px;
+    margin-top: 3px;
+    width: 30%;
+    height: 95%;
+    background-color: rgba(57, 66, 38);
+    display: flex;
+    float: left;
+    border-radius: 3%;
+    padding: 5px;
+}
+
+.humidade{
+    color:#FFFFFF;
+    margin-left: 15px;
+    margin-top: 3px;
+    width:30%;
+    height: 95%;
+    background-color: rgb(57, 66, 38);
+    display: flex;
+    float: left;
+    border-radius: 3%;
+    padding: 5px;
+    padding-left: 25px;
+}
+
+.estado{
+    color:#FFFFFF;
+    margin-left: 15px;
+    margin-top: 3px;
+    width: 30%;
+    height: 95%;
+    background-color: rgba(57, 66, 38);
+    display: flex;
+    float: left;
+    border-radius: 3%;
+    padding: 5px;
+    padding-left: 30px;
+}
+
+
