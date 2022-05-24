@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
+    <script type="text/javascript" src="cadastro.js"></script>
     <title>Cadastros</title>
 </head>
 
@@ -27,12 +28,71 @@
                 </nav>
 
             </div>
+<<<<<<< HEAD:public/dash/cadastro.html
+        </div> 
+        <!-- <div class="pstn-botao">
+        <div id="div-cont">
+            <div id="novo-Cadast" onclick="acao()">Novo Cadastro</div>
+                          <button id="excluir-Cadast">Excluir Cadastro</button>
+
+            <div class="modal">
+                <div onclick="fechar()" class="fechar"></d>
+            </div>
+=======
         </div>
         <div class="div-cont">
             <button class="button-40" role="button">Cadastrar</button>
             <button class="button-50" role="button">Excluir</button>
+>>>>>>> 6a9ccd7cd2654faf5c78b871442bc946bb0b4e9a:public/dashboard/cadastro.html
         </div>
     </div>
+    </div> -->
+
+    <div class="cad">
+
+        <div id="listareg">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div>
+            <button onclick="visualizar('cadastro')">Novo cadastro</button>
+        </div>
+        </div>
+
+        <div id="cadastroreg">
+
+            <div class="label">
+                <div>ID</div>
+                <div>
+                    <input  readonly>
+                </div>
+            </div>
+
+            <div class="label">
+            <div>NOME</div>
+            <div>
+                <input type="text" id="nome">
+            </div>
+        </div>
+           
+
+            <div>
+                <button >Salvar</button>
+                <button onclick="visualizar('lista')" class="cinza">Cancelar</button>
+            </div>
+
+    </div>
+    
+</div>
+
+    
 </body>
 
 </html>
