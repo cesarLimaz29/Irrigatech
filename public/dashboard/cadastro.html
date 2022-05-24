@@ -5,31 +5,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cadastro.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="cadastro.js"></script>
+
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/style.css">
+    
     <title>Cadastros</title>
 </head>
 
-<body>
-    <div class="div-direita">
-        <div class="div-container">
-            <div class="div-esquerda">
-                <div class="bem-vindo">
-                    <p>Bem Vindo</p>
-                </div>
-                <nav class="menu">
-                    <ul>
-                        <li><a href="../dashboard.html"> <img src="../images/dash-images/house.png"> Home</a></li>
-                        <li><a href="#"> <img src="../images/dash-images/cadastro.png"> Cadastros</a></li>
-                        <li><a href="#"> <img src="../images/dash-images/campo.png"> Setores</a></li>
-                        <li><a href="#"> <img src="../images/dash-images/dashboard.png"> Dashboard</a></li>
-                        <li><a href="../login.html"> <img src="../images/dash-images/saida.png"> Sair</a></li>
-                    </ul>
-                </nav>
+<body><nav class="sidebar close">
+    <header>
+        <div class="imagem-text">
+            <span class="image">
+                <img src="imagens/logo.png" alt="">
+            </span>
 
+            <div class="text logo-text">
+                <span class="name">Bem Vindo</span>
+                <span class="profession">Usuario</span>
             </div>
-<<<<<<< HEAD:public/dash/cadastro.html
-        </div> 
+        </div>
+
+        
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-home-alt icon' ></i>
+                        <span class="text nav-text">Inicio</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                        <span class="text nav-text">Dashboards</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="index-setor.html">
+                        <i class='bx bx-pie-chart-alt icon' ></i>
+                        <span class="text nav-text">Setores</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="cadastro.html">
+                        <i class='bx bx-edit icon'></i>
+                        <span class="text nav-text">Cadastro</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-help-circle icon'></i>
+                        <span class="text nav-text">Fale Conosco</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="botao-content">
+            <li class="">
+                <a href="#">
+                    <i class='bx bx-log-out icon' ></i>
+                    <span class="text nav-text">Sair</span>
+                </a>
+            </li>                
+        </div>
+    </div> 
         <!-- <div class="pstn-botao">
         <div id="div-cont">
             <div id="novo-Cadast" onclick="acao()">Novo Cadastro</div>
@@ -38,12 +89,10 @@
             <div class="modal">
                 <div onclick="fechar()" class="fechar"></d>
             </div>
-=======
         </div>
         <div class="div-cont">
             <button class="button-40" role="button">Cadastrar</button>
             <button class="button-50" role="button">Excluir</button>
->>>>>>> 6a9ccd7cd2654faf5c78b871442bc946bb0b4e9a:public/dashboard/cadastro.html
         </div>
     </div>
     </div> -->
@@ -71,7 +120,7 @@
             <div class="label">
                 <div>ID</div>
                 <div>
-                    <input  readonly>
+                    <input readonly>
                 </div>
             </div>
 
