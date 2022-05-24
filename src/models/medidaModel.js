@@ -4,10 +4,10 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     instrucaoSql = `select 
                         temperatura, 
                         umidade, 
-                        momento,
+                        hora_sensor,
                         DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
-                    from medida
-                    where fk_aquario = ${idAquario}
+                    from hora_sensor
+                    where fksensor = ${idAquario}
                     order by id desc limit ${limite_linhas}`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -17,7 +17,7 @@ function buscarMedidasEmTempoReal(idAquario) {
     instrucaoSql = `select 
                         temperatura, 
                         umidade, DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-                        fk_aquario 
+                        fksensor 
                         from medida where fk_aquario = ${idAquario} 
                     order by id desc limit 1`;
 
