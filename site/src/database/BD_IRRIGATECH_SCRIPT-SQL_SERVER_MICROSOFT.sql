@@ -8,9 +8,10 @@ cpf CHAR(11),
 nome_cli VARCHAR(100),
 email VARCHAR(45),
 senha VARCHAR(45),
-tel_cel VARCHAR(15)
+tel_cel VARCHAR(15),
+fkempresa INT,
+FOREIGN KEY (fkempresa) REFERENCES empresa(id_empresa);
 );
-
 
 CREATE TABLE Empresa(
 id_empresa INT PRIMARY KEY IDENTITY,
@@ -19,32 +20,22 @@ nome_emp VARCHAR(100),
 segmento VARCHAR(60),
 tel_com VARCHAR(15),
 fkempresa_filiais INT,
-FOREIGN KEY (fkempresa_filiais) REFERENCES empresa(Id_empresa),
-fkusuario INT,
-FOREIGN KEY (fkusuario) REFERENCES Usuario(Id_usuario)
-);
-
-CREATE TABLE Setor(
-id_setor INT PRIMARY KEY IDENTITY,
-setor VARCHAR(45),
-fkempresa INT,
-FOREIGN KEY (fkempresa) REFERENCES empresa(Id_empresa)
-
+FOREIGN KEY (fkempresa_filiais) REFERENCES empresa(id_empresa),
 );
 
 CREATE TABLE Sensor(
 id_sensor INT PRIMARY KEY IDENTITY,
 tipo_sensor VARCHAR(45),
-fksetor INT,
-FOREIGN KEY (fksetor) REFERENCES setor(Id_setor)
+fkempresa INT,
+FOREIGN KEY (fkempresa) REFERENCES empresa(id_empresa)
 );
 
 CREATE TABLE Dados_sensor(
-id_dados INT,
-hora_sensor DATETIME,
-umidadade VARCHAR(10),
-temperatura VARCHAR(10),
+id_dados INT IDENTITY(1,1),
 fksensor INT,
 FOREIGN KEY (fksensor) REFERENCES Sensor(id_sensor), 
-PRIMARY KEY (id_dados,fksensor)
+PRIMARY KEY (id_dados,fksensor),
+umidade VARCHAR(10),
+temperatura VARCHAR(10),
+hora_sensor DATETIME DEFAULT CURRENT_TIMESTAMP
 );
