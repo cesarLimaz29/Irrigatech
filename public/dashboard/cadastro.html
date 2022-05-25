@@ -86,10 +86,10 @@
     </nav>
 
     <div class="pai">
-        
-        <div id="listareg" > 
+       <div class="resultados" > 
+        <div id="listareg"  > 
             
-            <table class="fl-table">
+            <table class="tabela">
             <thead>
             <tr>
                 <th>ID</th>
@@ -115,10 +115,11 @@
             <button onclick="visualizar('cadastro')">Novo cadastro</button>
         </div>
         </div>
+    </div>
     
-        <div class="cad" style="display: none;">
+        <div class="cad" style="display: none;" >
         <div id="cadastroreg">
-
+            <h1>Cadastra-se</h1>
             <div class="label">
                 <div>ID</div>
                 <div>
@@ -128,6 +129,13 @@
 
             <div class="label">
             <div>NOME</div>
+            <div>
+                <input type="text" id="nome">
+            </div>
+        </div>
+
+            <div class="label">
+            <div>EMAIL</div>
             <div>
                 <input type="text" id="nome">
             </div>
