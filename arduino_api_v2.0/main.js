@@ -1,26 +1,43 @@
 const serialport = require('serialport');
 const express = require('express');
 const mysql = require('mysql2');
-
+const sql = require('mssql');
 
 const SERIAL_BAUD_RATE = 9600;
-const SERVIDOR_PORTA = 3000;
+const SERVIDOR_PORTA = 3300;
 const HABILITAR_OPERACAO_INSERIR = true;
 
+// escolha deixar a linha 'desenvolvimento' descomentada se quiser conectar seu arduino ao banco de dados local, MySQL Workbench
+// const AMBIENTE = 'desenvolvimento';
+
+// escolha deixar a linha 'producao' descomentada se quiser conectar seu arduino ao banco de dados remoto, SQL Server
+const AMBIENTE = 'producao';
+
 const serial = async (
-    valoresFkSensor,
+    valoresIdSensor,
     valoresDht11Umidade,
     valoresDht11Temperatura
 ) => {
-    const poolBancoDados = mysql.createPool(
-        {
-            host: 'localhost',
-            port: 3306,
-            user: 'admin',
-            password: 'admin',
-            database: 'projeto_iot'
-        }
-    ).promise();
+    let poolBancoDados = ''
+
+    if (AMBIENTE == 'desenvolvimento') {
+        poolBancoDados = mysql.createPool(
+            {
+                // CREDENCIAIS DO BANCO LOCAL - MYSQL WORKBENCH
+                host: 'localhost',
+                user: 'USUARIO_DO_BANCO_LOCAL',
+                password: 'SENHA_DO_BANCO_LOCAL',
+                database: 'DATABASE_LOCAL'
+            }
+        ).promise();
+    } else if (AMBIENTE == 'producao') {
+
+        console.log('Projeto rodando inserindo dados em nuvem. Configure as credenciais abaixo.')
+
+    } else {
+        throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
+    }
+
 
     const portas = await serialport.SerialPort.list();
     const portaArduino = portas.find((porta) => porta.vendorId == 2341 && porta.productId == 43);
@@ -38,20 +55,48 @@ const serial = async (
     });
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         const valores = data.split(';');
-        const fkSensor = parseFloat(valores[0])
+        const idSensor = parseFloat(valores[0]);
         const dht11Umidade = parseFloat(valores[1]);
         const dht11Temperatura = parseFloat(valores[2]);
 
-        valoresFkSensor.push(fkSensor);
+        valoresIdSensor.push(idSensor);
         valoresDht11Umidade.push(dht11Umidade);
         valoresDht11Temperatura.push(dht11Temperatura);
 
         if (HABILITAR_OPERACAO_INSERIR) {
-            await poolBancoDados.execute(
-                'INSERT INTO dados_sensor (fk_sensor, umidade, temperatura) VALUES (?, ?, ?)',
-                [fkSensor, dht11Umidade, dht11Temperatura]
-            );
-            console.log("valores inseridos no banco pelo sensor" + fkSensor + ": " + dht11Umidade + ", " + dht11Temperatura)
+
+            if (AMBIENTE == 'producao') {
+
+                // Este insert irá inserir os dados na tabela "medida" -> altere se necessário
+                // Este insert irá inserir dados de fk_aquario id=1 >> você deve ter o aquario de id 1 cadastrado.
+                sqlquery = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${idSensor}, ${dht11Umidade}, ${dht11Temperatura})`;
+
+                // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
+                const connStr = "Server=svr-1adsb-grupo2.database.windows.net;Database=grupo2;User Id=usuarioParaAPIArduino_datawriter;Password=#Gf_senhaParaAPI;";
+
+                function inserirComando(conn, sqlquery) {
+                    conn.query(sqlquery);
+                    console.log(("valores inseridos no banco pelo sensor com id " + idSensor + ": ", dht11Umidade + ", " + dht11Temperatura));
+                }
+
+                sql.connect(connStr)
+                    .then(conn => inserirComando(conn, sqlquery))
+                    .catch(err => console.log("erro! " + err));
+
+            } else if (AMBIENTE == 'desenvolvimento') {
+
+                // Este insert irá inserir os dados na tabela "medida" -> altere se necessário
+                // Este insert irá inserir dados de fk_aquario id=1 >> você deve ter o aquario de id 1 cadastrado.
+                await poolBancoDados.execute(
+                    'INSERT INTO  VALUES (?, ?, ?)',
+                    [idSensor, dht11Umidade, dht11Temperatura]
+                );
+                console.log("valores inseridos no banco pelo sensor com id " + idSensor + ": ", dht11Umidade + ", " + dht11Temperatura)
+
+            } else {
+                throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
+            }
+
         }
 
     });
@@ -61,9 +106,9 @@ const serial = async (
 }
 
 const servidor = (
-    valoresFkSensor,
+    valoresIdSensor,
     valoresDht11Umidade,
-    valoresDht11Temperatura,
+    valoresDht11Temperatura
 ) => {
     const app = express();
     app.use((request, response, next) => {
@@ -74,8 +119,8 @@ const servidor = (
     app.listen(SERVIDOR_PORTA, () => {
         console.log(`API executada com sucesso na porta ${SERVIDOR_PORTA}`);
     });
-    app.get('/sensores/fkSensor', (_, response) => {
-        return response.json(valoresFkSensor);
+    app.get('/sensores/luminosidade', (_, response) => {
+        return response.json(valoresIdSensor);
     });
     app.get('/sensores/dht11/umidade', (_, response) => {
         return response.json(valoresDht11Umidade);
@@ -86,17 +131,17 @@ const servidor = (
 }
 
 (async () => {
-    const valoresFkSensor = []
+    const valoresIdSensor = [];
     const valoresDht11Umidade = [];
     const valoresDht11Temperatura = [];
     await serial(
-        valoresFkSensor,
+        valoresIdSensor,
         valoresDht11Umidade,
-        valoresDht11Temperatura,
+        valoresDht11Temperatura
     );
     servidor(
-        valoresFkSensor,
+        valoresIdSensor,
         valoresDht11Umidade,
-        valoresDht11Temperatura,
+        valoresDht11Temperatura
     );
 })();

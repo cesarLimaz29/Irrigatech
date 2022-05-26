@@ -10,7 +10,9 @@ email VARCHAR(45),
 senha VARCHAR(45),
 tel_cel VARCHAR(15),
 fkempresa INT,
-FOREIGN KEY (fkempresa) REFERENCES empresa(id_empresa);
+FOREIGN KEY (fkempresa) REFERENCES empresa(id_empresa),
+fkAdministrador INT,
+FOREIGN KEY (fkAdministrador) REFERENCES usuario(id_usuario)
 );
 
 CREATE TABLE Empresa(
@@ -20,7 +22,7 @@ nome_emp VARCHAR(100),
 segmento VARCHAR(60),
 tel_com VARCHAR(15),
 fkempresa_filiais INT,
-FOREIGN KEY (fkempresa_filiais) REFERENCES empresa(id_empresa),
+FOREIGN KEY (fkempresa_filiais) REFERENCES empresa(id_empresa)
 );
 
 CREATE TABLE Sensor(
