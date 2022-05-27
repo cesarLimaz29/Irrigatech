@@ -1,23 +1,25 @@
 <!-- Coding by CodingLab | www.codinglabweb.com -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
-    
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/funcoes.js"></script>
-    
-    
-    <title>Dashboard -  IrrigaTech</title> 
+
+
+    <title>Dashboard - IrrigaTech</title>
 </head>
+
 <body>
-    
+
     <nav class="sidebar close">
         <header>
             <div class="imagem-text">
@@ -31,7 +33,7 @@
                 </div>
             </div>
 
-            
+
         </header>
 
         <div class="menu-bar">
@@ -39,21 +41,21 @@
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-home-alt icon' ></i>
+                            <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Inicio</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <i class='bx bx-bar-chart-alt-2 icon'></i>
                             <span class="text nav-text">Dashboards</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="index-setor.html">
-                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <i class='bx bx-pie-chart-alt icon'></i>
                             <span class="text nav-text">Setores</span>
                         </a>
                     </li>
@@ -78,40 +80,77 @@
             <div class="botao-content">
                 <li class="">
                     <a href="#">
-                        <i class='bx bx-log-out icon' ></i>
+                        <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Sair</span>
                     </a>
-                </li>                
+                </li>
             </div>
         </div>
 
     </nav>
-    
+
     <div style="display: flex; justify-content: center;">
         <div>
             <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-            <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Setor  1</button>
-            <button class="btn-chart btn-white" onclick="obterDadosGrafico(2)">Setor  2</button>
-            <button class="btn-chart btn-white" onclick="obterDadosGrafico(3)">Setor  3</button>
-            <button class="btn-chart btn-white" onclick="obterDadosGrafico(4)">Setor  4</button>
+            <button class="botaozin" onclick="obterDadosGrafico(1)">Setor 1</button>
+            <button class="botaozin" onclick="obterDadosGrafico(2)">Setor 2</button>
+            <button class="botaozin" onclick="obterDadosGrafico(3)">Setor 3</button>
+            <button class="botaozin" onclick="obterDadosGrafico(4)">Setor 4</button>
+
         </div>
-        <div>
-            <h3 class="tituloGraficos">
-                <span id="tituloAquario"></span>
-            </h3>
+    </div>
+
+    <div class="div-grafico">
+        <div class="div-fundo">
+
+            <span class="titulo-grafico"> Setor 1 </span>
+            <div class="Grafico1">
+
+                <canvas id="MeuGrafico1">
+            </div>
         </div>
-        <div class="graph">
-            <canvas id="canvas_grafico"></canvas>
+    </div>
+    <div class="analitycs">
+        <div class="estado-normal">
+            <h3>Normal</h3>
+            <br>
+            <img src="../images/dash-images/alert-verd.png">
+            
+        </div>
+        <div class="estado-alerta">
+            <h3>Alerta</h3>
+            <br>
+            <img src="../images/dash-images/alert amarelo.png">
+        </div>
+        <div class="estado-critico">
+            <h3>Critico</h3>
+            <br>
+            <img src="../images/dash-images/alerta-vermelho.png">
+        </div>
+    </div>
+
+    <div class="valores">
+        <div class="temperatura">
+            <h3> Temperatura </h3>
+            <span class="valor">23°</span>
+        </div>
+        <div class="umidade">
+            <h3> Umidade </h3>
+            <span class="valor">30%</span>
+        </div>
+        <div class="estado">
+            <h3> Estado </h3>
         </div>
     </div>
 
 </body>
+
 </html>
 <script>
 
     let proximaAtualizacao;
 
-    window.onload = obterDadosGrafico(1); 
+    window.onload = obterDadosGrafico(1);
 
     verificar_autenticacao();
 
@@ -255,10 +294,10 @@
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-                    
+
                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                     dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-                    
+
                     dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 

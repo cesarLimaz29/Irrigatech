@@ -141,14 +141,13 @@ header .imagem-text .profession{
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text{
     color: var(--sidebar-color);
-}
-
+}    
 .sidebar .menu-bar{
-    height: calc(100% - 55px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-y: scroll;
+        height: calc(100% - 55px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow-y: scroll;
 }
 .menu-bar::-webkit-scrollbar{
     display: none;
@@ -161,8 +160,8 @@ header .imagem-text .profession{
 }
 
 .home{
-    position: absolute;
     top: 0;
+    position: absolute;
     top: 0;
     left: 250px;
     height: 100vh;
@@ -179,23 +178,71 @@ header .imagem-text .profession{
 .botao-content{
     margin-bottom: 20px;
 }
-.div-grafico .div-fundo p {
-    font-size: px;
+
+.botaozin {
+    margin-top: 2%;
+    background: rgb(57, 66, 38);
+    border: 1px solid rgb(57, 66, 38);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+  }
+  
+  .botaozin:hover,
+  .botaozin:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: rgb(57, 66, 38);
+  }
+  
+  .botaozin:active {
+    opacity: .5;
+  }
+
+  .div-grafico{
+    margin-top: 5px;
+    margin-left: 18%;
+    width: 80%;
+    height: 550px;
+    
+}
+.div-grafico .div-fundo .titulo-grafico {
+    color: rgb(57, 66, 38);
+    font-size: 20px;
     margin-top: 15px;
-    font-family: 'Work Sans';
+    font-family: 'MontSerrat';
     position: absolute;
+    font-weight: 500;
 }
 
 .div-fundo {
     border-radius: 10px;
-    width: 35%;
-    height: 80%;
-    margin-top: 25px;
-    margin-left: 20%;
-    background-color: #FFFFFF;
+    width: 50%;
+    height: 55%;
+    margin-top: 1%;
+    margin-left: 7%;
+    background-color: #ffffff;
     display: flex;
     position: absolute;
     justify-content: center;
+    box-shadow: 0 0 1em rgb(57, 66, 38);
 }
 
 .Grafico1 {
@@ -217,120 +264,88 @@ header .imagem-text .profession{
     height: 80px;
     width: 80px;
 }
-
-.div-grafico2 .div-fundo2 p {
-    font-size: px;
-    margin-top: 15px;
-    font-family: 'Work Sans';
-    position: absolute;
+.analitycs{
+    color: rgb(57, 66, 38);
+    width: 15%;
+    height: 83%;
+    margin-left: 78%;
+    margin-top: -40.5%;
+    border-radius: 10px;
+    background-color: rgb(57, 66, 38);
+    position:absolute;
+    box-shadow: 0 0 1em rgb(57, 66, 38);
+    text-align: center;
+}
+.analitycs img{
+    margin-top: -20px;
+    width: 60%;
 }
 
-.div-fundo2 {
+.estado-normal{
+    width: 80%;
+    height: 28%;
+    margin-left: 10%;
+    margin-top: 10%;
     border-radius: 10px;
-    width: 35%;
+    background-color: rgb(255, 255, 255);
+}
+.estado-alerta{
+    width: 80%;
+    height: 28%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.estado-critico{
+    width: 80%;
+    height: 28%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.valor{
+    
+    font-size: 50px;
+    font-family: 'MontSerrat', sans-serif;
+    font-weight: 800;
+}
+.valores{
+    color: rgb(57, 66, 38);
+    width: 50%;
+    height: 23%;
+    background-color: rgb(57, 66, 38);
+    margin-top: -12%;
+    margin-left: 25%;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0 0 1em rgb(57, 66, 38);
+    display: flex;
+    float: left;
+    text-align: center;
+}
+.temperatura{
+    width: 30%;
     height: 80%;
-    margin-top: 25px;
-    margin-left: 60%;
-    background-color: #FFFFFF;
-    display: flex;
-    position: absolute;
-    justify-content: center;
+    margin-top:2%;
+    margin-left: 3%;
+    border-radius: 5px;
+    background-color: #fff;
 }
-
-.Grafico2 {
-    margin-top: 33px;
-    font-family: 'Work Sans', sans-serif;
-    color: grey;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+.umidade{
+    width: 30%;
+    height: 80%;
+    margin-top:2%;
+    margin-left: 2%;
+    border-radius: 5px;
+    background-color: #fff;
 }
-
-.Grafico2 p {
-    margin-left: 70px;
-}
-
-
-#meugrafico2 {
-    position: absolute;
-    height: 80px;
-    width: 80px;
-}
-.div-grafico4 .div-fundo4 p {
-    font-size: px;
-    margin-top: 15px;
-    font-family: 'Work Sans';
-    position: absolute;
-}
-
-.div-fundo4 {
-    border-radius: 10px;
-    width: 35%;
-    height: 40%;
-    margin-top:25%;
-    margin-left: 60%;
-    background-color: #FFFFFF;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-}
-
-.Grafico4 {
-    margin-top: 33px;
-    font-family: 'Work Sans', sans-serif;
-    color: grey;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.Grafico4 p {
-    margin-left: 70px;
-}
-
-#meugrafico4 {
-    position: absolute;
-    height: 80px;
-    width: 80px;
-}
-
-.div-grafico3 .div-fundo3 p {
-    font-size: px;
-    margin-top: 15px;
-    font-family: 'Work Sans';
-    position: absolute;
-}
-
-.div-fundo3 {
-    border-radius: 10px;
-    width: 35%;
-    height: 40%;
-    margin-left: 20%;
-    margin-top:25%;
-    background-color: #FFFFFF;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-}
-
-.Grafico3 {
-    margin-top: 33px;
-    font-family: 'Work Sans', sans-serif;
-    color: grey;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.Grafico3 p {
-    margin-left: 70px;
-}
-
-#meugrafico3 {
-    position: absolute;
-    height: 80px;
-    width: 80px;
+.estado{
+    width: 30%;
+    height: 80%;
+    margin-top:2%;
+    margin-left: 2%;
+    border-radius: 5px;
+    background-color: #fff;
 }
