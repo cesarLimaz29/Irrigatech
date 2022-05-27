@@ -106,7 +106,7 @@
             <span class="titulo-grafico"> Setor 1 </span>
             <div class="Grafico1">
 
-                <canvas id="MeuGrafico1">
+                <canvas id="canvas_grafico">
             </div>
         </div>
     </div>
@@ -146,18 +146,21 @@
 </body>
 
 </html>
+
 <script>
 
     let proximaAtualizacao;
 
     window.onload = obterDadosGrafico(1);
 
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
     verificar_autenticacao();
 
-    // function alterarTitulo(idAquario) {
-    //     var tituloAquario = document.getElementById("tituloAquario")
-    //     tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
-    // }
+    function alterarTitulo(idAquario) {
+        var tituloAquario = document.getElementById("tituloAquario")
+        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
+    }
 
     // O gráfico é construído com três funções:
     // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
@@ -171,7 +174,7 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
     function obterDadosGrafico(idAquario) {
-        // alterarTitulo(idAquario)
+        alterarTitulo(idAquario)
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
@@ -294,10 +297,10 @@
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-
+                    
                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                     dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-
+                    
                     dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
