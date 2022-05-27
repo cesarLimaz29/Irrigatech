@@ -248,7 +248,7 @@ button{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    background-color: #07a;
+    background-color: #394226;
     color: white;
     margin: 3px;
     padding: 10px 15px;
@@ -266,7 +266,7 @@ button{
 }
 
 button.cinza{
-    background-color: #ccc;
+    background-color: rgb(253, 5, 5);
     color: 666;
 }
 
