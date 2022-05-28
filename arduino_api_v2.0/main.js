@@ -69,7 +69,12 @@ const serial = async (
 
                 // Este insert irá inserir os dados na tabela "medida" -> altere se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 >> você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${idSensor}, ${dht11Umidade}, ${dht11Temperatura})`;
+                sqlquery = `
+                INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${idSensor}, ${dht11Umidade}, ${dht11Temperatura});
+                INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+1}, ${Number(dht11Umidade)+(3*Math.random())}, ${Number(dht11Temperatura)+(4*Math.random())});
+                INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+2}, ${Number(dht11Umidade)+(5*Math.random())}, ${Number(dht11Temperatura)-(5*Math.random())});
+                INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+3}, ${Number(dht11Umidade)-(7*Math.random())}, ${Number(dht11Temperatura)+(8*Math.random())});
+                `;
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 const connStr = "Server=svr-1adsb-grupo2.database.windows.net;Database=grupo2;User Id=usuarioParaAPIArduino_datawriter;Password=#Gf_senhaParaAPI;";
