@@ -45,40 +45,47 @@
             </div>
 
     </header>
-
-    <div class="banner">
-        <div class="container">
-            <div class="card">
-                <span class="texto">
-                <h3>Calculadora para consumo anual de água</h3>
-                    Insira o consumo de água no verão em m³:
-                    <input class="ipt_class" id="ipt_verao" type="text">
-                </span>
-
-                <span class="texto">
-                    Insira o consumo de água no outono em m³:
-                    <input class="ipt_class" id="ipt_outono" type="text">
-                </span>
-
-                <span class="texto">
-                    Insira o consumo de água no inverno em m³:
-                    <input class="ipt_class" id="ipt_inverno" type="text">
-                </span>
-
-                <span class="texto">
-                    Insira o consumo de água no primavera em m³:
-                    <input class="ipt_class" id="ipt_primavera" type="text">
-                </span>
-
-                <span class="texto">
-                    Insira o tamanho da sua plantação em ha:
-                    <input class="ipt_class" id="ipt_tamanho" type="text">
-                </span>
-                <button onclick="bt_calculo()">Calcular consumo anual de água por m² de plantação</button>
+    <div class="cadastro">
+        <div class="container-cadastro">
+            <div class="cadastro-pic js-tilt" data-tilt>
+                <span class="resultado" id="spanText"></span>
+                <img src="images/caclu.png" alt="IMG">
             </div>
-            <span id="spanText"></span>
+
+            <div class="cadastro-form ">
+                <span class="cadastro-form-title">
+                    Calculadora para consumo anual de água m²
+                </span>
+
+                <div class="div-input1 ">
+                    <input class="input1" placeholder="Insira o consumo de água no verão em m³" id="ipt_verao" type="text">
+                    <span class="sombra-input1"></span>
+                </div>
+
+                <div class="div-input1 " >
+                    <input class="input1" placeholder="Insira o consumo de água no outono em m³" id="ipt_outono" type="text">
+                    <span class="sombra-input1"></span>
+                </div>
+
+                <div class="div-input1 ">
+                    <input class="input1" placeholder="Insira o consumo de água no inverno em m³" id="ipt_inverno" type="text">
+                    <span class="sombra-input1"></span>
+                </div>
+                <div class="div-input1 ">
+                    <input class="input1" placeholder="Insira o consumo de água no primavera em m³" id="ipt_primavera" type="text">
+                   <span class="sombra-input1"></span>
+                </div>
+                <div class="div-input1 ">
+                    <input class="input1" placeholder="Insira o tamanho da sua plantação em ha" id="ipt_tamanho" type="text">
+                    <span class="sombra-input1"></span>
+                </div>
+                <div class="container-cadastro-form-btn">
+                    <button class="cadastro-form-btn"  onclick="bt_calculo()">Calcular</button>
+                </div>
+            </div>
         </div>
     </div>
+    
 
     <footer class="container-footer">
 
@@ -152,9 +159,13 @@
         var ax_consumo_reduzido = 0.80 * ax_consumo;
         var ax_economia = 3 * (ax_consumo - ax_consumo_reduzido);
 
-        spanText.innerHTML = `O consumo anual de água por hectares de plantação é de ${ax_consumo.toFixed(2)} m³ / ha.
-        Com a utilização da nossa tecnologia, o consumo será reduzido para ${ax_consumo_reduzido.toFixed(2)} m³ / ha,
-        o que resultará em uma economia de R$ ${ax_economia.toFixed(2)} / ha.`;
+        var ax_ecofinal = ax_economia * ax_tamanho;
+
+        var porcentagem = ax_economia * 100/ax_ecofinal;
+
+        spanText.innerHTML = `O consumo anual de água por hectares de plantação é de ${ax_consumo.toFixed(2)} m³ por hectare.<br><br>
+        Com a utilização da nossa tecnologia, o consumo será reduzido para ${ax_consumo_reduzido.toFixed(2)} m³ por hectare.<br><br>
+        E a economia sera de R$ ${ax_ecofinal.toFixed(2)} em recursos hidricos equivalente ${porcentagem.toFixed(2)}% da plantação.`;
 
         ipt_verao.value = ``;
         ipt_outono.value = ``;
