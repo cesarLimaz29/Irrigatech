@@ -31,16 +31,19 @@ body {
 
 .navbar {
 	margin: 0px;
-	height: 16%;
+	height: 90px;
 	width: 100%;
 	padding: 1%;
 	padding-right: 70px;
 	top: 0%;
 	text-align: right;
 	transition: 0.5s;
+  background-color:#CAE4A1;
+  
 }
 
 .navbar ul li {
+  
 	margin-right: 5px;
 	display: inline-block;
 	padding: 1% 18px;
@@ -87,7 +90,7 @@ a:hover .barra {
 a {
   list-style-type: none;
   text-decoration: none;
-  color: #FFFFFF;
+  color:#000;
   cursor: pointer;
   transition: color 0.1s;
 }
@@ -189,7 +192,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-top: 3px;
+    margin-top: 60px;
     padding: 45px 130px 96px 148px;
   }
   
@@ -346,5 +349,174 @@ a {
     -o-transform: translateX(10px);
     transform: translateX(10px);
   }
+  .container-footer {
+    background: #394226;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px;
+    padding: 55px 50px;
+  }
   
+  .container-footer .footer-esquerda,
+  .container-footer .footer-centro,
+  .container-footer .footer-direita {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  /* Footer left */
+  
+  .container-footer .footer-esquerda {
+    width: 40%;
+  }
+  
+  /* The company logo */
+  
+  .container-footer h3 {
+    color: #ffffff;
+    font: normal 36px;
+    margin: 0;
+  }
+  
+  .container-footer h3 span {
+    color: #ffffff;
+  }
+  
+  /* Footer links */
+  
+  .container-footer .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
+  
+  .container-footer .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .container-footer .footer-nome-empresa {
+    color: rgb(250, 249, 249);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  /* Footer Center */
+  
+  .container-footer .footer-centro {
+    width: 35%;
+  }
+  
+  .container-footer .footer-centro i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .container-footer .footer-centro i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+  }
+  
+  .container-footer .footer-centro p {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 400;
+    vertical-align: middle;
+    margin: 0;
+  }
+  
+  .container-footer .footer-centro p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+  }
+  
+  .container-footer .footer-centro .info {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 27px;
+  }
+  
+  .container-footer .footer-centro p a {
+    color: lightseagreen;
+    text-decoration: none;
+    ;
+  }
+  
+  .container-footer .footer-links a:before {
+    content: "|";
+    font-weight: 300;
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .container-footer .footer-links .link-1:before {
+    content: none;
+  }
+  
+  /* Footer Right */
+  
+  .container-footer .footer-direita {
+    width: 20%;
+  }
+  
+  .container-footer .footer-sobre-empresa {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .container-footer .footer-sobre-empresa span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 880px) {
+  
+    .container-footer {
+      font: bold 14px sans-serif;
+    }
+  
+    .container-footer .footer-esquerda,
+    .container-footer .footer-centro,
+    .container-footer .footer-direita {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  
+    .container-footer .footer-centro i {
+      margin-left: 0;
+    }
+  
+  }
+  
+
   
