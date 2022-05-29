@@ -78,11 +78,7 @@
                     <input class="input1" placeholder="Insira o consumo de água no primavera em m³" id="ipt_primavera" type="text">
                    <span class="sombra-input1"></span>
                 </div>
-                <div class="div-input1 ">
-                    <input class="input1" placeholder="Insira o tamanho da sua plantação em ha" id="ipt_tamanho" type="text">
-                    <span class="sombra-input1"></span>
-                </div>
-                <div class="container-cadastro-form-btn">
+                    <div class="container-cadastro-form-btn">
                     <button class="cadastro-form-btn"  onclick="bt_calculo()">Calcular</button>
                 </div>
             </div>
@@ -156,19 +152,15 @@
         var ax_outono = Number(ipt_outono.value);
         var ax_inverno = Number(ipt_inverno.value);
         var ax_primavera = Number(ipt_primavera.value);
-        var ax_tamanho = Number(ipt_tamanho.value);
 
-        var ax_consumo = (ax_verao + ax_outono + ax_inverno + ax_primavera) / ax_tamanho;
-        var ax_consumo_reduzido = 0.80 * ax_consumo;
+        var ax_consumo = (ax_verao + ax_outono + ax_inverno + ax_primavera);
+        var ax_consumo_reduzido = 0.70 * ax_consumo;
         var ax_economia = 3 * (ax_consumo - ax_consumo_reduzido);
 
-        var ax_ecofinal = ax_economia * ax_tamanho;
-
-        var porcentagem = ax_economia * 100/ax_ecofinal;
-
-        spanText.innerHTML = `O consumo anual de água por hectares de plantação é de ${ax_consumo.toFixed(2)} m³ por hectare.<br><br>
-        Com a utilização da nossa tecnologia, o consumo será reduzido para ${ax_consumo_reduzido.toFixed(2)} m³ por hectare.<br><br>
-        E a economia sera de R$ ${ax_ecofinal.toFixed(2)} em recursos hidricos equivalente ${porcentagem.toFixed(2)}% da plantação.`;
+        
+        spanText.innerHTML = `O consumo anual de água é de ${ax_consumo.toFixed(2)} m³.<br><br>
+        Com a utilização da nossa tecnologia, o consumo será reduzido para ${ax_consumo_reduzido.toFixed(2)} m³.<br><br>
+        E a economia será de R$ ${ax_economia.toFixed(2)} em recursos hidricos, equivalente a 30% do consumo atual.`;
 
         ipt_verao.value = ``;
         ipt_outono.value = ``;
