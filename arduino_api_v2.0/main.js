@@ -71,11 +71,11 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 >> você deve ter o aquario de id 1 cadastrado.
                 sqlquery1 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${idSensor}, ${dht11Umidade}, ${dht11Temperatura});
                 `;
-                sqlquery2 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+1}, ${Number(dht11Umidade)+(3*Math.random())}, ${Number(dht11Temperatura)+(4*Math.random())});
+                sqlquery2 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${idSensor+1}, ${dht11Umidade+(3*Math.random())}, ${dht11Temperatura+(4*Math.random())});
                 `;
-                sqlquery3 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+2}, ${Number(dht11Umidade)+(5*Math.random())}, ${Number(dht11Temperatura)-(5*Math.random())});
+                sqlquery3 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${idSensor+2}, ${dht11Umidade+(5*Math.random())}, ${dht11Temperatura-(5*Math.random())});
                 `;
-                sqlquery4 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+3}, ${Number(dht11Umidade)-(7*Math.random())}, ${Number(dht11Temperatura)+(8*Math.random())});
+                sqlquery4 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${idSensor+3}, ${dht11Umidade-(7*Math.random())}, ${dht11Temperatura+(8*Math.random())});
                 `;
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
@@ -147,7 +147,7 @@ const servidor = (
     app.get('/sensores/fksensor/1', (_, response) => {
         return response.json(valoresIdSensor);
     });
-    app.get('/sensores/fksensor/1', (_, response) => {
+    app.get('/sensores/fksensor/2', (_, response) => {
         return response.json(valoresIdSensor);
     });
     app.get('/sensores/dht11/umidade', (_, response) => {
