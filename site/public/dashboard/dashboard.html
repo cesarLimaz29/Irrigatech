@@ -135,6 +135,14 @@
         </div>
         <div class="estado">
             <h3> Estado </h3>
+            <div class="e-temp">
+                <p> Temperatura</p>
+                <img src="../images/dash-images/alert amarelo.png">
+            </div>
+            <div class="e-umidade">
+                <p> Umidade</p>
+                <img src="../images/dash-images/alert-verd.png">
+            </div>
         </div>
     </div>
 
@@ -201,19 +209,19 @@
                 {
                     yAxisID: 'y-umidade',
                     label: 'Umidade',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#32b9cd8f',
+                    borderColor: '#000056',
+                    backgroundColor: 'rgba(0,86,130,0.2)',
                     fill: true,
                     data: []
                 },
                 {
                     yAxisID: 'y-temperatura',
                     label: 'Temperatura',
-                    borderColor: '#FFF',
-                    backgroundColor: '#32b9cd8f',
+                    borderColor: '#e00707',
+                    backgroundColor: 'rgba(161,0,0,0.2)',
                     fill: true,
                     data: []
-                }
+                },
             ]
         };
 
@@ -301,13 +309,13 @@
                     valorUmid.innerHTML = `${novoRegistro[0].umidade}%`
                     valorTemp.innerHTML = `${novoRegistro[0].temperatura}ºC`
 
-                    if () {
+                    // if () {
 
-                    } else if {
+                    // } else if {
 
-                    } else {
+                    // } else {
 
-                    }
+                    // }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);

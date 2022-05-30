@@ -348,4 +348,32 @@ header .imagem-text .profession{
     margin-left: 2%;
     border-radius: 5px;
     background-color: #fff;
+
+}
+.e-temp{
+    width: 40%;
+    height: 70%;
+    margin-left: 10px;
+}
+.e-umidade{
+    width: 40%;
+    height: 70%;
+    margin-left: 110px;
+    margin-top: -40.5%;
+}
+.e-temp p{
+    font-size: 12px;
+    font-weight: 500;
+}
+.e-temp img{
+    width: 65%;
+    margin-top: 5px;
+}
+.e-umidade p{
+    font-size: 12px;
+    font-weight: 500;
+}
+.e-umidade img{
+    width: 65%;
+    margin-top: 5px;
 }
