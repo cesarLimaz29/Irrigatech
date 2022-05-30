@@ -81,13 +81,25 @@ const serial = async (
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 const connStr = "Server=svr-1adsb-grupo2.database.windows.net;Database=grupo2;User Id=usuarioParaAPIArduino_datawriter;Password=#Gf_senhaParaAPI;";
 
-                function inserirComando(conn, sqlquery1, sqlquery2, sqlquery3, sqlquery4) {
-                    conn.query(sqlquery1, sqlquery2, sqlquery3, sqlquery4);
+                function inserirComando1(conn, sqlquery1) {
+                    conn.query(sqlquery1);
+                    console.log(("valores inseridos no banco: ", dht11Umidade + "% de umidade e " + dht11Temperatura + "ºC"));
+                }
+                function inserirComando2(conn, sqlquery2) {
+                    conn.query(sqlquery2);
+                    console.log(("valores inseridos no banco: ", dht11Umidade + "% de umidade e " + dht11Temperatura + "ºC"));
+                }
+                function inserirComando3(conn, sqlquery3) {
+                    conn.query(sqlquery3);
+                    console.log(("valores inseridos no banco: ", dht11Umidade + "% de umidade e " + dht11Temperatura + "ºC"));
+                }
+                function inserirComando4(conn, sqlquery4) {
+                    conn.query(sqlquery4);
                     console.log(("valores inseridos no banco: ", dht11Umidade + "% de umidade e " + dht11Temperatura + "ºC"));
                 }
 
                 sql.connect(connStr)
-                    .then(conn => inserirComando(conn, sqlquery1, sqlquery2, sqlquery3, sqlquery4))
+                    .then(conn => inserirComando1(conn, sqlquery1)).then(conn => inserirComando2(conn, sqlquery2)).then(conn => inserirComando3(conn, sqlquery3)).then(conn => inserirComando4(conn, sqlquery4))
                     .catch(err => console.log("erro! " + err));
 
             } else if (AMBIENTE == 'desenvolvimento') {
@@ -126,7 +138,16 @@ const servidor = (
     app.listen(SERVIDOR_PORTA, () => {
         console.log(`API executada com sucesso na porta ${SERVIDOR_PORTA}`);
     });
-    app.get('/sensores/luminosidade', (_, response) => {
+    app.get('/sensores/fksensor/1', (_, response) => {
+        return response.json(valoresIdSensor);
+    });
+    // app.get('/sensores/fksensor/2', (_, response) => {
+    //     return response.json(Number(valoresIdSensor)+1);
+    // });
+    app.get('/sensores/fksensor/1', (_, response) => {
+        return response.json(valoresIdSensor);
+    });
+    app.get('/sensores/fksensor/1', (_, response) => {
         return response.json(valoresIdSensor);
     });
     app.get('/sensores/dht11/umidade', (_, response) => {

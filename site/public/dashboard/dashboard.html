@@ -127,11 +127,11 @@
     <div class="valores">
         <div class="temperatura">
             <h3> Temperatura </h3>
-            <span class="valor">23°</span>
+            <span class="valor" id="valorTemp">23°</span>
         </div>
         <div class="umidade">
             <h3> Umidade </h3>
-            <span class="valor">30%</span>
+            <span class="valor" id="valorUmid">30%</span>
         </div>
         <div class="estado">
             <h3> Estado </h3>
@@ -297,6 +297,17 @@
                     dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
                     window.grafico_linha.update();
+
+                    valorUmid.innerHTML = `${novoRegistro[0].umidade}%`
+                    valorTemp.innerHTML = `${novoRegistro[0].temperatura}ºC`
+
+                    if () {
+
+                    } else if {
+
+                    } else {
+
+                    }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
