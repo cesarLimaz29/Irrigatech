@@ -14,6 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/funcoes.js"></script>
 
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
     <link rel="icon" href="imagens\logo.png" type="image/icon type">
     <title>Dashboard - IrrigaTech</title>
 </head>
@@ -145,8 +147,6 @@
 
     window.onload = obterDadosGrafico(1);
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
     // verificar_autenticacao();
 
     function alterarTitulo(idAquario) {
@@ -177,7 +177,6 @@
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
-
                     plotarGrafico(resposta, idAquario);
                 });
             } else {
@@ -193,7 +192,8 @@
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     function plotarGrafico(resposta, idAquario) {
-        console.log('iniciando plotagem do gráfico...');
+
+        console.log('ENTREI NA FUNÇÃO PLOTAR GRÁFICO !!!!!!!');
 
         var dados = {
             labels: [],

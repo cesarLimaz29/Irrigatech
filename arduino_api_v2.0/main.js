@@ -69,23 +69,25 @@ const serial = async (
 
                 // Este insert irá inserir os dados na tabela "medida" -> altere se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 >> você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `
-                INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${idSensor}, ${dht11Umidade}, ${dht11Temperatura});
-                INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+1}, ${Number(dht11Umidade)+(3*Math.random())}, ${Number(dht11Temperatura)+(4*Math.random())});
-                INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+2}, ${Number(dht11Umidade)+(5*Math.random())}, ${Number(dht11Temperatura)-(5*Math.random())});
-                INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+3}, ${Number(dht11Umidade)-(7*Math.random())}, ${Number(dht11Temperatura)+(8*Math.random())});
+                sqlquery1 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${idSensor}, ${dht11Umidade}, ${dht11Temperatura});
+                `;
+                sqlquery2 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+1}, ${Number(dht11Umidade)+(3*Math.random())}, ${Number(dht11Temperatura)+(4*Math.random())});
+                `;
+                sqlquery3 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+2}, ${Number(dht11Umidade)+(5*Math.random())}, ${Number(dht11Temperatura)-(5*Math.random())});
+                `;
+                sqlquery4 = `INSERT INTO dados_sensor (fkSensor, umidade, temperatura) VALUES (${Number(idSensor)+3}, ${Number(dht11Umidade)-(7*Math.random())}, ${Number(dht11Temperatura)+(8*Math.random())});
                 `;
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 const connStr = "Server=svr-1adsb-grupo2.database.windows.net;Database=grupo2;User Id=usuarioParaAPIArduino_datawriter;Password=#Gf_senhaParaAPI;";
 
-                function inserirComando(conn, sqlquery) {
-                    conn.query(sqlquery);
-                    console.log(("valores inseridos no banco pelo sensor com id " + idSensor + ": ", dht11Umidade + ", " + dht11Temperatura));
+                function inserirComando(conn, sqlquery1, sqlquery2, sqlquery3, sqlquery4) {
+                    conn.query(sqlquery1, sqlquery2, sqlquery3, sqlquery4);
+                    console.log(("valores inseridos no banco: ", dht11Umidade + "% de umidade e " + dht11Temperatura + "ºC"));
                 }
 
                 sql.connect(connStr)
-                    .then(conn => inserirComando(conn, sqlquery))
+                    .then(conn => inserirComando(conn, sqlquery1, sqlquery2, sqlquery3, sqlquery4))
                     .catch(err => console.log("erro! " + err));
 
             } else if (AMBIENTE == 'desenvolvimento') {
