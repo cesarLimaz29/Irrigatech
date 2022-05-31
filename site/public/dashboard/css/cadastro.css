@@ -209,16 +209,18 @@ header .imagem-text .profession{
 
 
 #cadastroreg{
-    
-    width: 45%;
-    height: 45% ;
+    margin-top: 10px;
+    width: 70%;
+    height: 600px;
+    margin-left: 310px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: 50px 45px;
     border: black solid 1px;
     border-radius: 20px;
-    align-items: center;        
+    align-items: center;
+    color: #fff;        
 }
 
 body[page=lista]#listareg{
@@ -229,54 +231,13 @@ body[page=cadastro]#cadastroreg{
     display: block;
 }
 
-table{
-    width: 70%;
-    border-collapse: collapse;
-}
 
-table,th,
-table td{
-    font-size: 14px;
-    padding: 10px 15px;
-    border: solid 1px #ccc;
-    background-color: white;
-
-   
-}
-
-button{
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #394226;
-    color: white;
-    margin: 3px;
-    padding: 10px 15px;
-}
-
-.but{
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: rgb(253, 5, 5);
-    color: white;
-    margin: 3px;
-    padding: 10px 15px;
-
-}
-
-button.cinza{
-    background-color: rgb(253, 5, 5);
-    color: 666;
-}
-
-button:hover{
-    opacity: 0.8;
-}
 input{
     border: solid 1px #ccc;
-    border-radius: 4px;
+    border-radius: 20px;
     padding: 10px;
+    width:250px ;
+    margin-top: 15px;
 }
 label{
     background-color: white;
@@ -292,110 +253,43 @@ label>div>input{
 }
 
 
-.tabela-wrapper{
-    margin: 10px 70px 70px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
-}
 
-.tabela {
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: normal;
-    border: none;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
-    white-space: nowrap;
-    background-color: white;
-}
-
-.tabela td, .tabela th {
+.botao-cards {
+    margin-top:10%;
+    background: rgb(255,255, 255);
+    border: 1px solid rgb(57, 66, 38);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: rgb(57, 66, 38);
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
     text-align: center;
-    padding: 8px;
-}
-
-.tabela td {
-    border-right: 1px solid #f8f8f8;
-    font-size: 12px;
-}
-
-.tabela thead th {
-    color: #ffffff;
-    background: rgb(57, 66, 38);
-}
-
-
-.tabela thead th:nth-child(odd) {
-    color: #ffffff;
-    background: rgb(57, 66, 38);
-}
-
-.tabela tr:nth-child(even) {
-    background: #F8F8F8;
-}
-
-/* Responsive */
-
-@media (max-width: 767px) {
-    .tabela {
-        display: block;
-        width: 100%;
-    }
-    .tabela-wrapper:before{
-        content: "Scroll horizontally >";
-        display: block;
-        text-align: right;
-        font-size: 11px;
-        color: white;
-        padding: 0 0 10px;
-    }
-    .tabela thead, .tabela tbody, .tabela thead th {
-        display: block;
-    }
-    .tabela thead th:last-child{
-        border-bottom: none;
-    }
-    .tabela thead {
-        float: left;
-    }
-    .tabela tbody {
-        width: auto;
-        position: relative;
-        overflow-x: auto;
-    }
-    .tabela td, .fl-table th {
-        padding: 20px .625em .625em .625em;
-        height: 60px;
-        vertical-align: middle;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        overflow-y: auto;
-        width: 120px;
-        font-size: 13px;
-        text-overflow: ellipsis;
-    }
-    .tabela thead th {
-        text-align: left;
-        border-bottom: 1px solid #000000;
-    }
-    .tabela tbody tr {
-        display: table-cell;
-    }
-    .tabela tbody tr:nth-child(odd) {
-        background: none;
-    }
-    .tabela tr:nth-child(even) {
-        background: transparent;
-    }
-    .tabela tr td:nth-child(odd) {
-        background: #000000;
-        border-right: 1px solid #000000;
-    }
-    .tabela tr td:nth-child(even) {
-        border-right: 1px solid #000000;
-    }
-    .tabela tbody td {
-        display: block;
-        text-align: center;
-    }
-}
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    margin-left: 5%;
+    width: 100%;
+  }
+  
+  .botao-cards:hover,
+  .botao-cards:active {
+    background-color: initial;
+    background-position: 0 0;
+    background-color: #ccc;
+    color: rgb(57, 66, 38);
+  }
+  
+  .botao-cards:active {
+    opacity: .5;
+  }

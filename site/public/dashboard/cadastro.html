@@ -84,59 +84,46 @@
     </nav>
 
     <div class="cad" id="cadastroreg">
-        <h1>Cadastre-se</h1>
+        <h1>Cadastre um novo usuario</h1>
+        
         <div class="label">
-            <div>ID</div>
             <div>
-                <input readonly>
+                <input type="text" placeholder="Nome" id="nome_input">
             </div>
         </div>
 
         <div class="label">
-            <div>NOME</div>
             <div>
-                <input type="text" id="nome_input">
+                <input type="text" placeholder="E-mail" id="email_input">
             </div>
         </div>
 
         <div class="label">
-            <div>EMAIL</div>
             <div>
-                <input type="text" id="email_input">
+                <input type="text" placeholder="CPF" id="cpf_input">
             </div>
         </div>
 
         <div class="label">
-            <div>CPF</div>
             <div>
-                <input type="text" id="cpf_input">
+                <input type="text" placeholder="Telefone" id="tel_input">
             </div>
         </div>
 
         <div class="label">
-            <div>Telefone</div>
             <div>
-                <input type="text" id="tel_input">
+                <input type="text" placeholder="Senha" id="senha_input">
             </div>
         </div>
 
         <div class="label">
-            <div>Senha</div>
             <div>
-                <input type="text" id="senha_input">
-            </div>
-        </div>
-
-        <div class="label">
-            <div>Confirmar Senha</div>
-            <div>
-                <input type="text" id="confirmacao_senha_input">
+                <input type="text" placeholder="Confirmar Senha" id="confirmacao_senha_input">
             </div>
         </div>
 
         <div>
-            <button onclick="cadastrar()">Salvar</button>
-            <button onclick="visualizar('lista')" class="cinza">Cancelar</button>
+            <button class="botao-cards" onclick="cadastrar()">Cadastrar</button>
         </div>
     </div>
 
