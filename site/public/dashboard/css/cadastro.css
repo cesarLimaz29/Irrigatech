@@ -190,6 +190,7 @@ header .imagem-text .profession{
 .cad{
     width: 80%;
     height: 20%;
+    background-color: #394226;
     margin-top: 10%;
     margin-left: 40%;
     display: flex;
@@ -215,7 +216,6 @@ header .imagem-text .profession{
     justify-content: center;
     flex-direction: column;
     padding: 50px 45px;
-    background: white;
     border: black solid 1px;
     border-radius: 20px;
     align-items: center;        
@@ -277,6 +277,10 @@ input{
     border: solid 1px #ccc;
     border-radius: 4px;
     padding: 10px;
+}
+label{
+    background-color: white;
+    height: fit-content;
 }
 
 label>div{

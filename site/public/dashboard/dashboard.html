@@ -305,24 +305,34 @@
                     dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
                     window.grafico_linha.update();
+
                     vlrTemper = novoRegistro[0].temperatura;
                     vlrUmida = novoRegistro[0].umidade;
+
                     valorUmid.innerHTML = `${novoRegistro[0].umidade}%`
                     valorTemp.innerHTML = `${novoRegistro[0].temperatura}ºC`
 
                     if (vlrTemper >= 18 && vlrTemper <= 35) {
                         alertTemp.innerHTML = `<p> Temperatura</p><img src="../images/dash-images/alert-verd.png">`
+
                     } else if (vlrTemper > 11 && vlrTemper < 18 && vlrTemper > 35 && vlrTemper < 39) {
                         alertTemp.innerHTML = `<p> Temperatura</p><img src="../images/dash-images/alert amarelo.png">`
+
                     } else {
                         alertTemp.innerHTML = `<p> Temperatura</p><img src="../images/dash-images/alerta-vermelho.png">`
+
                     }
+
+                    
                     if (vlrUmida >= 20 && vlrUmida <= 30) {
                         alertUmid.innerHTML = `<p> Umidade</p><img src="../images/dash-images/alert-verd.png">`
+
                     } else if (vlrUmida >= 15 && vlrUmida <= 20 && vlrUmida >= 30 && vlrUmida <= 45) {
                         alertUmid.innerHTML = `<p> Umidade</p><img src="../images/dash-images/alert amarelo.png">`
+
                     } else {
                         alertUmid.innerHTML = `<p> Umidade</p><img src="../images/dash-images/alerta-vermelho.png">`
+                        
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar

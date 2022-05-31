@@ -1,24 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/funcoes.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cadastro.css">
-    
+
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
-    
+
+
     <link rel="icon" href="imagens\logo.png" type="image/icon type">
-    <title>Dashboard -  IrrigaTech</title> 
+    <title>Dashboard - IrrigaTech</title>
 </head>
+
 <body>
-    
+
     <nav class="sidebar close">
         <header>
             <div class="imagem-text">
@@ -31,7 +34,7 @@
                     <span class="profession">Cadastro</span>
                 </div>
             </div>
-            
+
         </header>
 
         <div class="menu-bar">
@@ -46,7 +49,7 @@
 
                     <li class="nav-link">
                         <a href="dashboard.html">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <i class='bx bx-bar-chart-alt-2 icon'></i>
                             <span class="text nav-text">Dashboards</span>
                         </a>
                     </li>
@@ -71,82 +74,159 @@
             <div class="botao-content">
                 <li class="">
                     <a href="../login.html">
-                        <i class='bx bx-log-out icon' ></i>
+                        <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Sair</span>
                     </a>
-                </li>                
+                </li>
             </div>
         </div>
 
     </nav>
 
-    <div class="pai">
-       <div class="resultados" > 
-        <div id="listareg"  > 
-            
-            <table class="tabela">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Excluir</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>01</td>
-                <td>Cesar</td>
-                <td>CesarLima387@gmail.com</td>
-                <td><button class="but" ><i class='bx bx-trash'></i> </button></td>
-                
-                
-            </tr>
-            
-            <tbody>
-        </table>
-
-        <div>
-            <button onclick="visualizar('cadastro')">Novo cadastro</button>
-        </div>
-        </div>
-    </div>
-    
-        <div class="cad" style="display: none;" >
-        <div id="cadastroreg">
-            <h1>Cadastra-se</h1>
-            <div class="label">
-                <div>ID</div>
-                <div>
-                    <input readonly>
-                </div>
+    <div class="cad" id="cadastroreg">
+        <h1>Cadastre-se</h1>
+        <div class="label">
+            <div>ID</div>
+            <div>
+                <input readonly>
             </div>
+        </div>
 
-            <div class="label">
+        <div class="label">
             <div>NOME</div>
             <div>
-                <input type="text" id="nome">
+                <input type="text" id="nome_input">
             </div>
         </div>
 
-            <div class="label">
+        <div class="label">
             <div>EMAIL</div>
             <div>
-                <input type="text" id="nome">
+                <input type="text" id="email_input">
             </div>
         </div>
-           
 
+        <div class="label">
+            <div>CPF</div>
             <div>
-                <button >Salvar</button>
-                <button onclick="visualizar('lista')" class="cinza">Cancelar</button>
+                <input type="text" id="cpf_input">
             </div>
+        </div>
 
+        <div class="label">
+            <div>Telefone</div>
+            <div>
+                <input type="text" id="tel_input">
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Senha</div>
+            <div>
+                <input type="text" id="senha_input">
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Confirmar Senha</div>
+            <div>
+                <input type="text" id="confirmacao_senha_input">
+            </div>
+        </div>
+
+        <div>
+            <button onclick="cadastrar()">Salvar</button>
+            <button onclick="visualizar('lista')" class="cinza">Cancelar</button>
+        </div>
     </div>
-</div>   
-</div>
 
-    
+
 </body>
 
 </html>
+<script>
+    function cadastrar() {
+        aguardar();
+        cadastroreg.style.display = `block`;
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var cpfVar = cpf_input.value;
+        var telVar = tel_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var fkAdminVar = 1;
+
+        if (nomeVar == "" || emailVar == "" || cpfVar == "" || telVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (senhaVar != confirmacaoSenhaVar) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "As senhas inseridas devem ser iguais para prosseguir!";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                cpfServer: cpfVar,
+                telServer: telVar,
+                senhaServer: senhaVar,
+                fkAdminServer: fkAdminVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block"
+                alert("Cadastro realizado com sucesso!");
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
