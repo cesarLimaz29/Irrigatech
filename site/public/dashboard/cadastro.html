@@ -125,6 +125,9 @@
         <div>
             <button class="botao-cards" onclick="cadastrar()">Cadastrar</button>
         </div>
+        <div id="div_aguardar"></div>
+        <div id="cardErro"></div>
+        <div id="mensagem_erro"></div>
     </div>
 
 
@@ -134,7 +137,6 @@
 <script>
     function cadastrar() {
         aguardar();
-        cadastroreg.style.display = `block`;
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
@@ -143,7 +145,7 @@
         var telVar = tel_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
-        var fkAdminVar = 1;
+        var fkAdmin = 1;
 
         if (nomeVar == "" || emailVar == "" || cpfVar == "" || telVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
@@ -177,7 +179,7 @@
         }
 
         // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuarios/cadastroDash", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -190,14 +192,14 @@
                 cpfServer: cpfVar,
                 telServer: telVar,
                 senhaServer: senhaVar,
-                fkAdminServer: fkAdminVar
+                fkAdminServer: fkAdmin
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                // cardErro.style.display = "block"
+                cardErro.style.display = "block"
                 alert("Cadastro realizado com sucesso!");
                 limparFormulario();
                 finalizarAguardar();
